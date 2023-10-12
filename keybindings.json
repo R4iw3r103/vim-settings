@@ -1,0 +1,114 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+  {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "k"
+  },
+  {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "k",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j"
+  },
+  {
+    "key": "space s",
+    "command": "workbench.action.files.save",
+    "when": "neovim.mode == normal && editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "cursorRight",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "cursorLeft",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "cursorDown",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "cursorUp",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+h",
+    "command": "cursorHome",
+    "when": "neovim.mode == normal && editorTextFocus"
+  },
+  {
+    "key": "shift+l",
+    "command": "cursorEnd",
+    "when": "neovim.mode == normal && editorTextFocus"
+  },
+  {
+    "key": "r",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "m r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.explorer.fileView.focus",
+    "when": "!filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "m c",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // explorer: paste
+  {
+    "key": "m p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // explorer: new file
+  {
+    "key": "m a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // explorer: delete file
+  {
+    "key": "m d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // explorer: new folder
+  {
+    "key": "m f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "space d",
+    "command": "editor.action.goToDeclaration",
+    "when": "neovim.mode == normal && editorTextFocus"
+  },
+  {
+    "key": "space b",
+    "command": "workbench.action.navigateBack",
+    "when": "neovim.mode == normal && editorTextFocus"
+  }
+]
