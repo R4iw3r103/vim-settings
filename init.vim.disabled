@@ -1,0 +1,70 @@
+filetype off                  " required
+
+if v:progname =~? "evim"
+  finish
+endif
+
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file (restore to previous version)
+  if has('persistent_undo')
+    set undofile	" keep an undo file (undo changes after closing)
+  endif
+endif
+
+if &t_Co > 2 || has("gui_running")
+  set hlsearch
+endif
+
+augroup vimrcEx
+  au!
+
+  autocmd FileType text setlocal textwidth=78
+augroup END
+
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
+
+let mapleader = "\<Space>"
+
+set title
+set number
+syntax on
+set ruler
+set smartcase
+set cursorline
+set shiftwidth=2
+set tabstop=2
+set hls
+set clipboard=unnamed
+set showmatch
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
+inoremap <silent> jj <Esc>
+inoremap <silent> っj <Esc>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap え e
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy	
+noremap ;; $
+inoremap { {}<LEFT> 
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+noremap <S-h> 0
+noremap <S-l> $
+nnoremap <Leader>s :w<CR>
+map <C-n> :NERDTreeToggle<CR>
+nnoremap Y y$

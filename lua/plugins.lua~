@@ -1,0 +1,5 @@
+vim.cmd.packageadd "packer.nvim"
+
+require("packer").startup(function()
+	-- Write plugins you wanna add below.
+	-- use "hoge/hoge-plugin"
